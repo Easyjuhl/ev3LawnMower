@@ -29,6 +29,8 @@ def colour(r,g,b):
        h,l = rgbConvert(r,g,b)
        if l < 0.15:
            return "BLACK"
+       elif  0.9 < l:
+           return "WHITE"
        elif  0 <= h and h <= 45:
            return "RED"
        elif 45 < h and h <= 75:
