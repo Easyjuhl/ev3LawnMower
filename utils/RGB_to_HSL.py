@@ -4,6 +4,7 @@ Created on Wed Nov 25 12:36:03 2020
 
 @author: Albert
 """
+
 def rgbConvert(r,g,b):
     colours = [r/255.0,g/255.0,b/255.0]
     xmax = max(colours)
@@ -21,10 +22,21 @@ def rgbConvert(r,g,b):
         return h + 360
     else:
         return h
-"""
-for r in range(0,255):
-    for g in range(0,255):
-        for b in range(0,255):
-            if rgbConvert(r,g,b) > 360:
-                print("Red: " + str(r) + " Green: " + str(g) + " Blue: " + str(b))
-  """              
+    
+def colour(r,g,b):
+       h = rgbConvert(r,g,b)
+       if  0 <= h and h <= 45:
+           return "RED"
+       elif 45 < h and h <= 75:
+           return "YELLOW"
+       elif 75 < h and h <= 160:
+           return "GREEN"
+       elif 160 < h and h <= 200:
+           return "CYAN"
+       elif 200 < h and h <= 280:
+           return "BLUE"
+       elif 280 < h and h <= 320:
+           return "PURPLE"
+       else:
+           return "RED"
+        
