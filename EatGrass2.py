@@ -24,8 +24,8 @@ while True:
     Color = RGB_to_HSL.colour(r,g,b)
 
     if state == "Onward":
-        ma.on(speed=15)
-        mc.on(speed=15)
+        ma.on(speed=40)
+        mc.on(speed=40)
 
         SawBlack += 1
 
@@ -34,6 +34,9 @@ while True:
         
         if Color == "BLACK":
             state="BackCauseBlack"
+        
+        if tch.is_pressed:
+            state = "SPEED"
     
     elif state == "BackCauseBlack":
         ma.on(speed=-15)
@@ -41,3 +44,15 @@ while True:
         sleep(5)
         state = "Onward"
         Sawblack=0
+
+    elif state = "SPEED":
+        ma.off()
+        mc.off()
+        sleep(1)
+        ma.on(speed=-10)
+        mc.on(speed=-10)
+        sleep(1)
+        ma.on(speed=100)
+        mc.on(speed=100)
+        sleep(5)
+        state = "Onward"        
