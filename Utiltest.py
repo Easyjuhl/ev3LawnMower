@@ -17,3 +17,6 @@ cl.calibrate_white()
 while True:
     r,g,b=cl.rgb
     print(RGB_to_HSL.colour(r,g,b))
+
+    if btn.any():
+        break
